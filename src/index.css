@@ -1,0 +1,11 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(252, 249, 249);
+    scroll-behavior:smooth;
+    display: smooth;
+
+}
+   ::-webkit-scrollbar {
+    display: none;
+}

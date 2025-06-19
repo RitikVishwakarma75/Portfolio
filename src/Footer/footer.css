@@ -1,0 +1,190 @@
+/* =======================
+   Footer Base Styles
+========================== */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  background-color: #000;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* =======================
+   Left Box & Links
+========================== */
+.leftbox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  min-width: 250px;
+}
+
+.links {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.a-links,
+.b-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.links li {
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.links li:hover {
+  color: #3e7b99;
+}
+
+/* =======================
+   Social Media Icons
+========================== */
+.logo .social-media-Icon {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+}
+
+.logo .social-media-Icon i {
+  font-size: 24px;
+  color: #e6e7eb;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logo .social-media-Icon i:hover {
+  color: #00aaff;
+}
+
+/* =======================
+   Info (Form) Section
+========================== */
+.info {
+  flex: 1;
+  max-width: 500px;
+  padding: 30px;
+  margin-left: 40px;
+  background-color: #083f8b5a;
+  border-radius: 8px;
+}
+
+.info header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.info h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.info label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.enter,
+.area {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  background-color: #2d3748;
+  color: white;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.enter:focus,
+.area:focus {
+  border-color: #00aaff;
+  outline: none;
+}
+
+.area {
+  resize: vertical;
+  height: 150px;
+}
+
+/* =======================
+   Submit Button
+========================== */
+.fbtn {
+  display: flex;
+  justify-content: center;
+}
+
+.finalbtn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.finalbtn:hover {
+  background-color: #00aaff;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* =======================
+   Responsive Design
+========================== */
+@media (max-width: 1000px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+
+  .leftbox,
+  .info {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .a-links,
+  .b-links {
+    align-items: center;
+  }
+
+  .info {
+    margin-left: 0;
+  }
+
+  .enter,
+  .area {
+    text-align: center;
+  }
+}
