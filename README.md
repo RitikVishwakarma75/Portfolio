@@ -7,14 +7,6 @@ This web-based portfolio showcases my projects, skills, and experience in web de
 
 ---
 
-## 📸 Preview
-
-![Portfolio Preview](assets/img1.png)
-[Portfolio Preview](assets/img2.png)
-[Portfolio Preview](assets/img3.png)
-
----
-
 ## 🧩 Built With
 
 - 🔹 HTML5 – For semantic structure
