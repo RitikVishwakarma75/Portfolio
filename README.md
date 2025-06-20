@@ -7,9 +7,12 @@ This web-based portfolio showcases my projects, skills, and experience in web de
 
 ---
 
+<<<<<<< HEAD
 
 ---
 
+=======
+>>>>>>> 41f9e35b1b690a97a784b25c710bb9d47ca2ef41
 ## 🧩 Built With
 
 - 🔹 HTML5 – For semantic structure
