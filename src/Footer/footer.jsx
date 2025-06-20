@@ -12,20 +12,18 @@ function Footer() {
 
   // Resume action handler
   const handleResumeAction = () => {
-    const userConfirmed = window.confirm("Do you want to download the resume?");
-    if (userConfirmed) {
-      const newTab = window.open("/assets/resume.pdf", "_blank");
-      if (newTab) newTab.focus();
+    const userConfirmed = window.confirm("Do you want to view the resume?");
 
-      const link = document.createElement("a");
-      link.href =
-        "https://drive.google.com/file/d/12hqr1fqyqHOVbcnRHKUMYkapnFk_VE4P/view?usp=drivesdk";
-      link.download = "Ritik_Vishwakarma_Resume.pdf";
-      link.click();
+    if (userConfirmed) {
+      window.open(
+        "https://drive.google.com/file/d/12hqr1fqyqHOVbcnRHKUMYkapnFk_VE4P/view",
+        "_blank"
+      );
     } else {
       alert("No worries, maybe later!");
     }
   };
+  
 
   // Handle form input changes
   const handleChange = (e) => {
