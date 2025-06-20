@@ -3,16 +3,11 @@
 Welcome to my personal developer portfolio! 🚀  
 This web-based portfolio showcases my projects, skills, and experience in web development and computer science. Built using **HTML, CSS, and JavaScript**, it's designed to be clean, responsive, and easy to navigate.
 
-🔗 **Live Site:** [ritikvishwakarma75.github.io/Portfolio](https://ritikvishwakarma75.github.io/Portfolio)
+🔗 **Live Site:**
+https://ritikvishwakarma75.github.io/Portfolio/
 
 ---
 
-<<<<<<< HEAD
-
----
-
-=======
->>>>>>> 41f9e35b1b690a97a784b25c710bb9d47ca2ef41
 ## 🧩 Built With
 
 - 🔹 HTML5 – For semantic structure
