@@ -19,7 +19,7 @@ function Footer() {
 
       const link = document.createElement("a");
       link.href =
-        "https://drive.google.com/file/d/1UHjRnGIgWTiaGjSgb0uez6oXs0hQOC7S/view?usp=drivesdk";
+        "https://drive.google.com/file/d/12hqr1fqyqHOVbcnRHKUMYkapnFk_VE4P/view?usp=drivesdk";
       link.download = "Ritik_Vishwakarma_Resume.pdf";
       link.click();
     } else {

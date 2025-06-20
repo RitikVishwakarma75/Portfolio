@@ -30,11 +30,15 @@ function Brand(props) {
             <p className="p-name">Bing Box</p>
           </div>
           <div className="slide">
-            <img src={props.image2} alt="Project 2" />
+            <a href="https://ritikvishwakarma75.github.io/web-UI/">
+              <img src={props.image2} alt="Project 2" />
+            </a>
             <p className="p-name">E-Commerce web UI</p>
           </div>
           <div className="slide">
-            <img src={props.image3} alt="Project 3" />
+            <a href="https://ritikvishwakarma75.github.io/Weather-web/">
+              <img src={props.image3} alt="Project 3" />
+            </a>
             <p>Weather Web</p>
           </div>
 
@@ -46,11 +50,15 @@ function Brand(props) {
             <p className="p-name">Bing Box</p>
           </div>
           <div className="slide">
-            <img src={props.image2} alt="Project 2" />
+            <a href="https://ritikvishwakarma75.github.io/web-UI/">
+              <img src={props.image2} alt="Project 2" />
+            </a>
             <p className="p-name">E-Commerce web UI</p>
           </div>
           <div className="slide">
-            <img src={props.image3} alt="Project 3" />
+            <a href="https://ritikvishwakarma75.github.io/Weather-web/">
+              <img src={props.image3} alt="Project 3" />
+            </a>
             <p>Weather Web</p>
           </div>
         </div>
@@ -170,7 +178,7 @@ function Brand(props) {
               Built for showcasing movies with interactive UI and clean visuals.
             </p>
             <a
-              href="https://your-bingbox-live-link.com"
+              href="https://ritikvishwakarma75.github.io/project---Movie/"
               target="_blank"
               rel="noopener noreferrer"
               className="project-link"
@@ -191,7 +199,7 @@ function Brand(props) {
               logic.
             </p>
             <a
-              href="https://your-ecommerce-live-link.com"
+              href="https://ritikvishwakarma75.github.io/web-UI/"
               target="_blank"
               rel="noopener noreferrer"
               className="project-link"
@@ -212,7 +220,7 @@ function Brand(props) {
               clean UI.
             </p>
             <a
-              href="https://your-weather-app-link.com"
+              href="https://ritikvishwakarma75.github.io/Weather-web/"
               target="_blank"
               rel="noopener noreferrer"
               className="project-link"
@@ -231,7 +239,7 @@ function Brand(props) {
               Clean, user-friendly interface with smooth UX interactions.
             </p>
             <a
-              href="https://your-todo-app-link.com"
+              href="https://ritikvishwakarma75.github.io/To-Do-List/"
               target="_blank"
               rel="noopener noreferrer"
               className="project-link"
@@ -255,7 +263,7 @@ function Brand(props) {
               rel="noopener noreferrer"
               className="project-link"
             >
-              🔗 View Project
+              {/* 🔗 View Project */}
             </a>
           </div>
           <div className="project-card">
@@ -267,7 +275,7 @@ function Brand(props) {
               real-time table updates and local storage support.
             </p>
             <a
-              href="https://your-attendance-tracker-link.com"
+              href="https://ritikvishwakarma75.github.io/Attendance_Tracker/"
               target="_blank"
               rel="noopener noreferrer"
               className="project-link"
@@ -295,15 +303,12 @@ function Brand(props) {
             Developers & AICTE (Sept–Nov 2023)
           </li>
           <li>
-            <strong>AWS Cloud Virtual Internship</strong> – AWS Academy
-            & AICTE (July–Sept 2024)
+            <strong>AWS Cloud Virtual Internship</strong> – AWS Academy & AICTE
+            (July–Sept 2024)
           </li>
           <li>
             <strong>Java Technology</strong> – Oracle (Jan 2024)
           </li>
-          
-          
-         
         </ul>
 
         {/* <h1 className="training-heading">🏆 Achievements</h1>

@@ -16,7 +16,7 @@ function Header() {
       // Trigger download
       const link = document.createElement("a");
       link.href =
-        "https://drive.google.com/file/d/1UHjRnGIgWTiaGjSgb0uez6oXs0hQOC7S/view?usp=drivesdk"; // Ensure this points to the correct path
+        "https://drive.google.com/file/d/12hqr1fqyqHOVbcnRHKUMYkapnFk_VE4P/view?usp=drivesdk"; // Ensure this points to the correct path
       link.download = "Ritik_Vishwakarma_Resume.pdf";
       link.click();
     } else {
@@ -26,7 +26,7 @@ function Header() {
 
   const handleConnectClick = () => {
     // Replace with your actual contact number
-    const contactNumber = "+91 750502409X";
+    const contactNumber = "+91 7505024092";
     alert(`You can contact me at: ${contactNumber}`);
     // Alternatively, you can make a phone call if the browser supports it
     // window.location.href = `tel:${contactNumber}`;
