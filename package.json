@@ -1,4 +1,5 @@
 {
+  "homepage": "https://ritikvishwakarma75.github.io/Portfolio",
   "name": "myportfolio",
   "private": true,
   "version": "0.0.0",
@@ -8,6 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
