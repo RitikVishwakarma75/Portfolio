@@ -8,138 +8,153 @@ function Brand(props) {
 
   return (
     <div className="brand-Story">
-      <div className="brand-Story-Text">
-        <p>HEY !</p>
-        <span className="brand-para">
-          My work is a reflection of my commitment to my clients.
-        </span>
-        <button className="brand-btn">
-          <span>Scroll Upper side</span>
-          <span className="arrow">
-            <i className="fas fa-arrow-up la"></i>
-          </span>
+      <div className="brand-story premium">
+        <p className="brand-eyebrow">HEY 👋</p>
+
+        <h1 className="brand-heading">
+          My work is a reflection of my
+          <span className="highlight"> commitment </span>
+          to my clients.
+        </h1>
+
+        <button
+          className="brand-btn"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <span>Scroll to top</span>
+          <i className="fas fa-arrow-up"></i>
         </button>
       </div>
-      <div className="swip-box-slider">
+
+      <div className="slider-wrapper">
         <div className="slider-track">
-          {/* Original Slides */}
-          <div className="slide">
-            <a href="https://ritikvishwakarma75.github.io/project---Movie/">
-              <img src={props.image1} alt="Project 1" />
-            </a>
-            <p className="p-name">Bing Box</p>
-          </div>
-          <div className="slide">
-            <a href="https://ritikvishwakarma75.github.io/web-UI/">
-              <img src={props.image2} alt="Project 2" />
-            </a>
-            <p className="p-name">E-Commerce web UI</p>
-          </div>
-          <div className="slide">
-            <a href="https://ritikvishwakarma75.github.io/Weather-web/">
-              <img src={props.image3} alt="Project 3" />
-            </a>
-            <p>Weather Web</p>
-          </div>
+          {[
+            {
+              name: "Bing Box",
+              link: "https://ritikvishwakarma75.github.io/project---Movie/",
+              img: props.image1,
+            },
+            {
+              name: "E-Commerce Web UI",
+              link: "https://ritikvishwakarma75.github.io/web-UI/",
+              img: props.image2,
+            },
+            {
+              name: "Weather Web",
+              link: "https://ritikvishwakarma75.github.io/Weather-web/",
+              img: props.image3,
+            },
+          ]
+            .concat([
+              {
+                name: "Bing Box",
+                link: "https://ritikvishwakarma75.github.io/project---Movie/",
+                img: props.image1,
+              },
+              {
+                name: "E-Commerce Web UI",
+                link: "https://ritikvishwakarma75.github.io/web-UI/",
+                img: props.image2,
+              },
+              {
+                name: "Weather Web",
+                link: "https://ritikvishwakarma75.github.io/Weather-web/",
+                img: props.image3,
+              },
+            ])
+            .map((project, index) => (
+              <div className="slide premium" key={index}>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={project.img} alt={project.name} />
+                </a>
+                <p className="p-name">{project.name}</p>
+              </div>
+            ))}
+        </div>
+      </div>
 
-          {/* Duplicated Slides (for seamless train effect) */}
-          <div className="slide">
-            <a href="https://ritikvishwakarma75.github.io/project---Movie/">
-              <img src={props.image1} alt="Project 1" />
-            </a>
-            <p className="p-name">Bing Box</p>
-          </div>
-          <div className="slide">
-            <a href="https://ritikvishwakarma75.github.io/web-UI/">
-              <img src={props.image2} alt="Project 2" />
-            </a>
-            <p className="p-name">E-Commerce web UI</p>
-          </div>
-          <div className="slide">
-            <a href="https://ritikvishwakarma75.github.io/Weather-web/">
-              <img src={props.image3} alt="Project 3" />
-            </a>
-            <p>Weather Web</p>
+      <div className="about premium-about">
+        <div className="about-text reveal-left">
+          <h1 className="about-title">About Me</h1>
+
+          <ul className="about-list">
+            <li>
+              👩‍🎓 <strong>B.Tech in Computer Science & Engineering</strong> at
+              Galgotias University (2022–2026) | CGPA: 7.42
+            </li>
+
+            <li>
+              💻 Passionate about <strong>Full-Stack Development</strong>,{" "}
+              <strong>Artificial Intelligence</strong>, and{" "}
+              <strong>building real-world projects</strong>
+            </li>
+
+            <li>
+              🌱 Currently sharpening skills in <strong>Java</strong>,{" "}
+              <strong>DSA</strong>, and <strong>Databases</strong>
+            </li>
+
+            <li>
+              🎥 <strong>Built a responsive movie trailer platform</strong> &{" "}
+              <strong>an Amazon-inspired e-commerce UI 🛒</strong>
+            </li>
+
+            <li>
+              📈 Solved <strong>DSA problems</strong> on{" "}
+              <a
+                href="https://leetcode.com/u/ritikvishwakarma75/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LeetCode
+              </a>
+            </li>
+
+            <li>
+              📫{" "}
+              <a href="mailto:ritikvishwakarma.mailbox@gmail.com">
+                ritikvishwakarma.mailbox@gmail.com
+              </a>
+            </li>
+
+            <li>
+              🔗{" "}
+              <a
+                href="https://www.linkedin.com/in/ritik-vishwakarma-294282299"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn Profile
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="about-image reveal-right">
+          <div className="img premium-img">
+            <img src={props.image} alt="About Me" />
           </div>
         </div>
       </div>
 
-      <div className="about">
-        <div className="about-text">
-          <h1 className="h1">About Me</h1>
-          <p className="about-para">
-            <ul className="about-list">
-              <li>
-                👩‍🎓 <strong>B.Tech in Computer Science & Engineering</strong> at
-                Galgotias University (2022–2026) | CGPA: 7.42
-              </li>
-              <li>
-                💻 Passionate about <strong>Full-Stack Development</strong>,{" "}
-                <strong>Artificial Intelligence</strong>, and{" "}
-                <strong>Building real-world project</strong>
-              </li>
-              <li>
-                🌱 Currently sharpening skills in <strong>Java</strong>,{" "}
-                <strong>Data Structures & Algorithms</strong>, and{" "}
-                <strong>DataBases</strong>
-              </li>
-              <li>
-                {" "}
-                <strong>
-                  🎥 Built a responsive web application that plays official
-                  movie trailers using real-time data.
-                </strong>{" "}
-                and{" "}
-                <strong>
-                  Developed a responsive Front-page E-commerce 🛒 UI inspired by
-                  Amazon.
-                </strong>
-              </li>
-              <li>
-                📈 Solved <strong> DSA problems</strong> on{" "}
-                <a
-                  href="https://leetcode.com/u/ritikvishwakarma75/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LeetCode
-                </a>
-              </li>
+      <div className="service premium-service">
+        <h2 className="service-heading">🛠️ Skills & Technologies</h2>
 
-              <li>
-                📫 Email:{" "}
-                <a href="mailto:ritikvishwakarma.mailbox@gmail.com">
-                  ritikvishwakarma.mailbox@gmail.com
-                </a>
-              </li>
-              <li>
-                🔗 LinkedIn:{" "}
-                <a
-                  href="https://www.linkedin.com/in/ritik-vishwakarma-294282299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  your-profile-link
-                </a>
-              </li>
-            </ul>
-          </p>
-        </div>
-      </div>
-
-      <div className="service">
-        <div className="service-heading">🛠️ Skills & Technologies</div>
-        <div className="service-card">
-          <div className="skill-card">
+        <div className="service-cards">
+          <div className="skill-card premium-card reveal">
             <h3>💻 Languages & Databases</h3>
             <ul className="skill-list">
               <li>Java</li>
-              <li>MySql</li>
+              <li>MySQL</li>
               <li>SQL</li>
             </ul>
           </div>
 
-          <div className="skill-card">
+          <div className="skill-card premium-card reveal delay">
             <h3>🌐 Web Technologies</h3>
             <ul className="skill-list">
               <li>HTML</li>
@@ -151,31 +166,31 @@ function Brand(props) {
             </ul>
           </div>
 
-          <div className="skill-card">
+          <div className="skill-card premium-card reveal delay-2">
             <h3>🧰 Tools & Frameworks</h3>
             <ul className="skill-list">
               <li>Git</li>
               <li>GitHub</li>
               <li>VS Code</li>
-              <li>Intellij IDEA</li>
+              <li>IntelliJ IDEA</li>
               <li>Figma</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div className="projects">
-        <h1 className="projects-heading">💼 Projects</h1>
-        <div className="projects-box">
-          <div className="project-card">
+      <div className="projects premium-projects">
+        <h2 className="projects-heading">💼 Projects</h2>
+
+        <div className="projects-grid">
+          <div className="project-card premium reveal">
             <h3>🎥 BingBox – Movie Trailer UI</h3>
             <p>
               Developed a dynamic trailer browsing platform using{" "}
-              <strong>React</strong>.<br />
-              Implemented trailer playback, smooth animations, and responsive UI
-              components.
+              <strong>React</strong>.
               <br />
-              Built for showcasing movies with interactive UI and clean visuals.
+              Implemented trailer playback, smooth animations, and responsive
+              UI.
             </p>
             <a
               href="https://ritikvishwakarma75.github.io/project---Movie/"
@@ -183,20 +198,17 @@ function Brand(props) {
               rel="noopener noreferrer"
               className="project-link"
             >
-              🔗 View Project
+              View Project →
             </a>
           </div>
 
-          <div className="project-card">
+          <div className="project-card premium reveal delay">
             <h3>🛍️ E-Commerce UI with Add-to-Cart</h3>
             <p>
-              Created a fully responsive <strong>E-Commerce UI</strong> using{" "}
-              <strong>HTML, CSS & JavaScript</strong>.<br />
-              Features include product listing, detailed product views, and an
-              interactive <strong>Add-to-Cart</strong> functionality.
+              Built a responsive <strong>E-Commerce UI</strong> using
+              <strong> HTML, CSS & JavaScript</strong>.
               <br />
-              Focused on clean layout, mobile responsiveness, and shopping cart
-              logic.
+              Includes product listing and cart logic.
             </p>
             <a
               href="https://ritikvishwakarma75.github.io/web-UI/"
@@ -204,20 +216,16 @@ function Brand(props) {
               rel="noopener noreferrer"
               className="project-link"
             >
-              🔗 View Project
+              View Project →
             </a>
           </div>
 
-          <div className="project-card">
-            <h3>🌦️ Weather App with API Integration</h3>
+          <div className="project-card premium reveal delay-2">
+            <h3>🌦️ Weather App (API)</h3>
             <p>
-              Built a dynamic <strong>Weather App</strong> using{" "}
-              <strong>HTML, CSS & JavaScript</strong>.<br />
-              Integrated with the <strong>OpenWeatherMap API</strong> to fetch
-              real-time weather data based on user input.
+              Weather app using <strong>OpenWeatherMap API</strong>.
               <br />
-              Displays temperature, weather condition, humidity, and more in a
-              clean UI.
+              Displays real-time weather, humidity, and conditions.
             </p>
             <a
               href="https://ritikvishwakarma75.github.io/Weather-web/"
@@ -225,18 +233,17 @@ function Brand(props) {
               rel="noopener noreferrer"
               className="project-link"
             >
-              🔗 View Project
+              View Project →
             </a>
           </div>
 
-          <div className="project-card">
+          <div className="project-card premium reveal">
             <h3>📝 To-Do List Web App</h3>
             <p>
-              Developed an interactive <strong>To-Do List</strong> using{" "}
-              <strong>HTML, CSS, and JavaScript</strong>.<br />
-              Features include task addition, deletion, marking as completed,
-              and data persistence with <strong>localStorage</strong>.<br />
-              Clean, user-friendly interface with smooth UX interactions.
+              Interactive <strong>To-Do List</strong> with
+              <strong> localStorage</strong>.
+              <br />
+              Add, delete, and complete tasks smoothly.
             </p>
             <a
               href="https://ritikvishwakarma75.github.io/To-Do-List/"
@@ -244,35 +251,28 @@ function Brand(props) {
               rel="noopener noreferrer"
               className="project-link"
             >
-              🔗 View Project
+              View Project →
             </a>
           </div>
 
-          <div className="project-card">
+          <div className="project-card premium reveal delay">
             <h3>💱 Currency Converter</h3>
             <p>
-              Created a dynamic <strong>Currency Converter</strong> using{" "}
-              <strong>HTML, CSS, JavaScript</strong>, and a real-time{" "}
-              <strong>Exchange Rates API</strong>.<br />
-              Allows users to convert between multiple currencies with live rate
-              updates and intuitive UI.
+              Real-time <strong>Currency Converter</strong> using
+              <strong> Exchange Rates API</strong>.
+              <br />
+              Clean UI with live updates.
             </p>
-            <a
-              href="https://your-currency-converter-link.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link"
-            >
-              {/* 🔗 View Project */}
-            </a>
+            <span className="coming-soon">Coming Soon</span>
           </div>
-          <div className="project-card">
+
+          <div className="project-card premium reveal delay-2">
             <h3>📋 Attendance Tracker</h3>
             <p>
-              Built a simple and effective <strong>Attendance Tracker</strong>{" "}
-              using <strong>HTML, CSS, and JavaScript</strong>.<br />
-              Allows users to add, update, and remove attendance records with
-              real-time table updates and local storage support.
+              Attendance management tool using
+              <strong> HTML, CSS & JavaScript</strong>.
+              <br />
+              Dynamic table updates with local storage.
             </p>
             <a
               href="https://ritikvishwakarma75.github.io/Attendance_Tracker/"
@@ -280,55 +280,56 @@ function Brand(props) {
               rel="noopener noreferrer"
               className="project-link"
             >
-              🔗 View Project
+              View Project →
             </a>
           </div>
         </div>
       </div>
 
-      <div className="training">
-        <h1 className="training-heading">🎓 Trainings & Certifications</h1>
-        <ul className="training-list">
-          <li>
-            <strong>AWS Cloud Foundations & Architecting</strong> – AWS Academy
-            Graduate (Sep-Aug 2024)
-          </li>
-          <li>
-            <strong>Web Developement Fundamentals </strong> – IBM SkillsBuild
-            (Mar-Apr 2025)
+      <div className="training premium-training">
+        <h2 className="training-heading">🎓 Trainings & Certifications</h2>
+
+        <ul className="training-timeline">
+          <li className="training-item reveal">
+            <span className="dot"></span>
+            <div className="content">
+              <h3>AWS Cloud Foundations & Architecting</h3>
+              <p>AWS Academy Graduate · Sep–Aug 2024</p>
+            </div>
           </li>
 
-          <li>
-            <strong>Android Developer Virtual Internship</strong> – Google for
-            Developers & AICTE (Sept–Nov 2023)
+          <li className="training-item reveal delay">
+            <span className="dot"></span>
+            <div className="content">
+              <h3>Web Development Fundamentals</h3>
+              <p>IBM SkillsBuild · Mar–Apr 2025</p>
+            </div>
           </li>
-          <li>
-            <strong>AWS Cloud Virtual Internship</strong> – AWS Academy & AICTE
-            (July–Sept 2024)
+
+          <li className="training-item reveal delay-2">
+            <span className="dot"></span>
+            <div className="content">
+              <h3>Android Developer Virtual Internship</h3>
+              <p>Google for Developers & AICTE · Sept–Nov 2023</p>
+            </div>
           </li>
-          <li>
-            <strong>Java Technology</strong> – Oracle (Jan 2024)
+
+          <li className="training-item reveal">
+            <span className="dot"></span>
+            <div className="content">
+              <h3>AWS Cloud Virtual Internship</h3>
+              <p>AWS Academy & AICTE · July–Sept 2024</p>
+            </div>
+          </li>
+
+          <li className="training-item reveal delay">
+            <span className="dot"></span>
+            <div className="content">
+              <h3>Java Technology</h3>
+              <p>Oracle · Jan 2024</p>
+            </div>
           </li>
         </ul>
-
-        {/* <h1 className="training-heading">🏆 Achievements</h1>
-        <ul className="training-list">
-          <li>
-            🥇 <strong>Top 50 Finalist</strong>, Smart India Hackathon 2024
-            (from 300+ teams)
-          </li>
-          <li>
-            💡 <strong>Solved 100+ LeetCode</strong> DSA problems
-          </li>
-          <li>
-            🚀 <strong>Selected among 2000+ applicants</strong> for Infosys
-            Springboard
-          </li>
-          <li>
-            📚 <strong>Member of IEEE</strong> – Actively participating in tech
-            events
-          </li>
-        </ul> */}
       </div>
     </div>
   );

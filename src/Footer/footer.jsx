@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import "./footer.css";
 
 function Footer() {
-  // State to manage form values
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -10,186 +10,113 @@ function Footer() {
     message: "",
   });
 
-  // Resume action handler
-  const handleResumeAction = () => {
-    const userConfirmed = window.confirm("Do you want to view the resume?");
+  const handleChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    if (userConfirmed) {
-      window.open(
-        "https://drive.google.com/file/d/12hqr1fqyqHOVbcnRHKUMYkapnFk_VE4P/view",
-        "_blank"
-      );
-    } else {
-      alert("No worries, maybe later!");
-    }
-  };
-  
-
-  // Handle form input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  // Form submission handler
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Here, you can add logic to send form data to an API or email
-    // For now, let's just log it
-    console.log("Form submitted with data:", formData);
-
-    // Optionally, you can reset the form after submission
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      message: "",
-    });
-
-    // Optional: Show a confirmation message or redirect the user
-    alert("Thank you for contacting us!");
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          alert("✅ Message sent successfully!");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          alert("❌ Failed to send message. Try again.");
+        }
+      );
   };
 
-  const openEmail = () => {
-    const email = "ritikvishwakarma.mailbox@gmail.com";
-    const subject = "Subject of the email";
-    const body = "Type your message here...";
-
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
-  };
-
-  const handleConnectClick = () => {
-    const contactNumber = "+91 750502409X";
-    alert(`You can contact me at: ${contactNumber}`);
-  };
-
-  const handleBlogClick = () => {
-    alert("Blog is under construction. Please check back later.");
-  };
-
-  const handleAddressClick = () => {
-    alert("Address is under construction. Please check back later.");
-  };
+  const openLink = (url) => window.open(url, "_blank");
 
   return (
-    <footer className="footer">
-      <div className="leftbox">
-        <div className="links">
-          <ul
-            className="a-links"
-            style={{ listStyleType: "none", cursor: "pointer" }}
+    <footer className="footer premium-footer">
+      {/* Left Section */}
+      <div className="footer-left reveal-left">
+        <h3 className="footer-brand">Ritik Vishwakarma</h3>
+
+        <ul className="footer-links">
+          <li
+            onClick={() =>
+              openLink("mailto:ritikvishwakarma.mailbox@gmail.com")
+            }
           >
-            <li onClick={openEmail}>Email</li>
-            <li onClick={handleAddressClick}>Address</li>
-          </ul>
-          <ul
-            className="b-links"
-            style={{ listStyleType: "none", cursor: "pointer" }}
+            Email
+          </li>
+          <li
+            onClick={() =>
+              openLink(
+                "https://drive.google.com/file/d/12hqr1fqyqHOVbcnRHKUMYkapnFk_VE4P/view"
+              )
+            }
           >
-            <li onClick={handleResumeAction}>Resume</li>
-            <li onClick={handleBlogClick}>Blog</li>
-            <li onClick={handleConnectClick}>Contact</li>
-          </ul>
-        </div>
-        <div className="logo">
-          <ul className="social-media-Icon">
-            <li>
-              <i
-                className="fa-brands fa-instagram fa-lg"
-                style={{ color: "#e6e7eb", cursor: "pointer" }}
-                onClick={() => {
-                  window.open(
-                    "https://www.instagram.com/ritik_.750/profilecard/?igsh=MWU3NjFmNmMydGNzYw=="
-                  );
-                }}
-              ></i>
-            </li>
-            <li>
-              <i
-                className="fa-brands fa-twitter fa-lg"
-                style={{ color: "#e6e7eb", cursor: "pointer" }}
-                onClick={() => {
-                  window.open(
-                    "https://x.com/RitikVi75174036?t=qK8031Pm7YDagvJtC-En7g&s=09"
-                  );
-                }}
-              ></i>
-            </li>
-            <li>
-              <i
-                className="fa-brands fa-facebook-f fa-lg"
-                style={{ color: "#e6e7eb", cursor: "pointer" }}
-                onClick={() => {
-                  window.open("https://www.facebook.com/share/1Bn1qaGdma/");
-                }}
-              ></i>
-            </li>
-            <li>
-              <i
-                className="fa-brands fa-linkedin-in fa-lg"
-                style={{ color: "#e6e7eb", cursor: "pointer" }}
-                onClick={() => {
-                  window.open(
-                    "https://www.linkedin.com/in/ritik-vishwakarma-294282299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                  );
-                }}
-              ></i>
-            </li>
-          </ul>
-        </div>
+            Resume
+          </li>
+          <li onClick={() => alert("📞 +91 750502409X")}>Contact</li>
+        </ul>
       </div>
-      <div className="info">
-        <header>READY TO COLLABORATE?</header>
-        <h1>Let's create something epic together</h1>
+
+      {/* Right Section */}
+      <div className="footer-form reveal-right">
+        <p className="footer-eyebrow">READY TO COLLABORATE?</p>
+        <h2>Let’s create something epic together</h2>
+
         <form onSubmit={handleSubmit}>
-          <label htmlFor="first-name">FIRST NAME *</label>
+          <div className="form-row">
+            <input
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              placeholder="First Name *"
+              required
+            />
+            <input
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              placeholder="Last Name *"
+              required
+            />
+          </div>
+
           <input
-            className="enter"
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            placeholder="Enter your first name"
-            required
-          />
-          <label htmlFor="last-name">LAST NAME *</label>
-          <input
-            className="enter"
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            placeholder="Enter your last name"
-            required
-          />
-          <label htmlFor="email">EMAIL *</label>
-          <input
-            className="enter"
-            type="email"
             name="email"
+            type="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Enter your e-mail"
+            placeholder="Email *"
             required
           />
-          <label htmlFor="message">MESSAGE *</label>
+
           <textarea
-            className="area"
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Type your message here"
+            placeholder="Your message *"
             required
-          ></textarea>
-          <div className="fbtn">
-            <button className="finalbtn" type="submit">
-              SUBMIT
-            </button>
-          </div>
+          />
+
+          <button type="submit" className="submit-btn">
+            Send Message →
+          </button>
         </form>
       </div>
     </footer>
