@@ -106,10 +106,10 @@ body {
 /* Infinite Scroll Animation */
 @keyframes scroll {
   from {
-    transform: translateX(0);
+    transform: translateX(20);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-20%);
   }
 }
 

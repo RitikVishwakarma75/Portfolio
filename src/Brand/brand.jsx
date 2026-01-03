@@ -30,6 +30,11 @@ function Brand(props) {
         <div className="slider-track">
           {[
             {
+              name: "Jungle Safari",
+              link: "https://jungle-safari-tzw3.vercel.app/",
+              img: props.image5,
+            },
+            {
               name: "Bing Box",
               link: "https://ritikvishwakarma75.github.io/project---Movie/",
               img: props.image1,

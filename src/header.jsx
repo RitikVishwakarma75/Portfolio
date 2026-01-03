@@ -8,7 +8,7 @@ function Header() {
 
     if (userConfirmed) {
       window.open(
-        "https://drive.google.com/file/d/12hqr1fqyqHOVbcnRHKUMYkapnFk_VE4P/view",
+        "https://drive.google.com/file/d/1boJXu0J2yrzlOgyWZchz5AfnxgiCoYt5/view?usp=sharing",
         "_blank"
       );
     } else {
